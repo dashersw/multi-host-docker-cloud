@@ -10,6 +10,6 @@ setInterval(_ => {
     req.send({type: 'req', source: id, val: Math.floor(Math.random() * 100)}, _ => {
         console.log(`I am ${id}. response: ${_}`);
     });
-}, 1000);
+}, 5000);
 
 req.on('added', console.log);
