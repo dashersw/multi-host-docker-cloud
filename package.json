@@ -1,6 +1,6 @@
 {
   "name": "multi-host-docker-cloud",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A multi-host microservices demo",
   "main": "index.js",
   "repository": {
@@ -13,7 +13,5 @@
     "url": "https://github.com/dashersw/multi-host-docker-cloud/issues"
   },
   "homepage": "https://github.com/dashersw/multi-host-docker-cloud#readme",
-  "dependencies": {
-    "cote": "^0.9.2"
-  }
+  "dependencies": {}
 }
