@@ -10,3 +10,5 @@ res.on('req', (req, cb) => {
     console.log(`I am ${id}. Sending out ${req.val} for requester#${req.source}`);
     cb(`hello from ${id}: ack ${req.val}`);
 });
+
+res.on('added', console.log);

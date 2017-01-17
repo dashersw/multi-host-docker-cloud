@@ -11,3 +11,5 @@ setInterval(_ => {
         console.log(`I am ${id}. response: ${_}`);
     });
 }, 1000);
+
+req.on('added', console.log);
