@@ -1,0 +1,6 @@
+node_modules
+README.md
+LICENSE
+Dockerfile
+docker-cloud.yml
+.gitignore
