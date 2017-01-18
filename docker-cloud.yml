@@ -1,10 +1,12 @@
-receive-broadcast:
+receive-multicast:
   image: cotedemo/multi-host:latest
-  command: node receive-broadcast
-  target_num_containers: 5
-send-broadcast:
-  image: cotedemo/multi-host:latest
-  command: node send-broadcast
+  command: node receive-multicast
+  target_num_containers: 2
   environment:
-    - BROADCAST_ADDRESS=10.7.255.255
-  target_num_containers: 5
+    - MULTICAST_ADDRESS=239.1.1.1
+send-multicast:
+  image: cotedemo/multi-host:latest
+  command: node send-multicast
+  environment:
+    - MULTICAST_ADDRESS=239.1.1.1
+  target_num_containers: 2

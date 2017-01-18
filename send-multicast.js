@@ -3,19 +3,20 @@ var socket = dgram.createSocket({type: 'udp4', reuseAddr: true });
 
 var id = Math.floor(Math.random() * 100);
 var testMessage = `[hello world] id: ${id}`;
-var broadcastAddress = process.env.BROADCAST_ADDRESS || '255.255.255.255';
-var broadcastPort = process.env.BROADCAST_PORT || 12345;
+var multicastAddress = process.env.MULTICAST_ADDRESS || '239.1.1.1';
+var multicastPort = process.env.MULTICAST_PORT || 12345;
+var multicastInterface = process.env.MULTICAST_INTERFACE;
 
 socket.bind(_ => {
-    socket.setBroadcast(true);
+    socket.addMembership(multicastAddress, multicastInterface);
 });
 
 setInterval(_ => {
     socket.send(testMessage,
         0,
         testMessage.length,
-        broadcastPort,
-        broadcastAddress,
+        multicastPort,
+        multicastAddress,
         err => {
             if (err) return console.log(err);
 
