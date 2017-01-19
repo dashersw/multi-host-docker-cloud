@@ -1,12 +1,12 @@
 receive-multicast:
   image: cotedemo/multi-host:latest
   command: node receive-multicast
-  target_num_containers: 2
+  target_num_containers: 3
   environment:
-    - MULTICAST_ADDRESS=239.1.1.1
+    - MULTICAST_ADDRESS=239.1.2.3
 send-multicast:
   image: cotedemo/multi-host:latest
   command: node send-multicast
   environment:
-    - MULTICAST_ADDRESS=239.1.1.1
-  target_num_containers: 2
+    - MULTICAST_ADDRESS=239.1.2.3
+  target_num_containers: 3
